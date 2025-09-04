@@ -22,3 +22,20 @@
 
 
 /* reset */
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: var(--ff-main);
+    font-weight: var(--fw-400);
+    color: var(--clr-Black);
+    background-color: #f9f9f9;
+    line-height: 1.1;
+}
+img{
+    max-width: 80%;
+    display: block;
+}
