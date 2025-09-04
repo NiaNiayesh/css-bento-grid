@@ -49,18 +49,18 @@ img {
 
 /* text styles */
 h1 {
-    font-size: 2.75rem;
-    font-weight: var(--fw-500);
+  font-size: 2.75rem;
+  font-weight: var(--fw-500);
 }
 
 h2 {
-    font-size: var(--fs-heading);
-    font-weight: var(--fw-500);
-    line-height: .9;
+  font-size: var(--fs-heading);
+  font-weight: var(--fw-500);
+  line-height: 0.9;
 }
 
 small {
-    font-size: var(--fs-body);
+  font-size: var(--fs-body);
 }
 
 /* layout styles */
@@ -83,7 +83,7 @@ small {
   gap: 1rem;
 }
 .bento-grid-item--element {
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   padding: 1rem;
 }
 .inside-element {
@@ -107,76 +107,139 @@ small {
 }
 /* ui components */
 .create {
-    place-content: center;
-    padding: 2rem;
-    background-color: var(--clr-Yellow-100);
+  place-content: center;
+  padding: 2rem;
+  background-color: var(--clr-Yellow-100);
 }
 
 .content {
-    place-content: center;
-    padding: 1.5rem;
-    background-color: var(--clr-Yellow-500);
+  place-content: center;
+  padding: 1.5rem;
+  background-color: var(--clr-Yellow-500);
 }
 
 .media {
-    place-content: center;
-    color: var(--clr-White);
-    text-align: center;
-    background-color: var(--clr-Purple-500);
+  place-content: center;
+  color: var(--clr-White);
+  text-align: center;
+  background-color: var(--clr-Purple-500);
 }
 
 .media img {
-    max-width: 10rem;
-    margin-inline: auto;
+  max-width: 10rem;
+  margin-inline: auto;
 }
 
 .manage {
-    position: relative;
-    overflow-x: hidden;
-    background-color: var(--clr-White);
+  position: relative;
+  overflow-x: hidden;
+  background-color: var(--clr-White);
 }
 
 .manage img {
-    position: relative;
-    right: -2rem;
-    max-width: 100%;
-    margin-bottom: 1rem;
+  position: relative;
+  right: -2rem;
+  max-width: 100%;
+  margin-bottom: 1rem;
 }
 
 .posting {
-    position: relative;
-    overflow: hidden;
-    background-color: var(--clr-Yellow-500);
+  position: relative;
+  overflow: hidden;
+  background-color: var(--clr-Yellow-500);
 }
 
 .posting img {
-    position: absolute;
-    bottom: -4rem;
-    left: 1.4rem;
+  position: absolute;
+  bottom: -4rem;
+  left: 1.4rem;
 }
 
 .schedule {
-    place-content: center;
-    padding-left: 1.5rem;
-    overflow: hidden;
-    background-color: var(--clr-Purple-100);
+  place-content: center;
+  padding-left: 1.5rem;
+  overflow: hidden;
+  background-color: var(--clr-Purple-100);
 }
 
 .schedule img {
-    position: relative;
-    right: -1.5rem;
-    max-width: 100%;
+  position: relative;
+  right: -1.5rem;
+  max-width: 100%;
 }
 
 .audience {
-    place-content: center;
-    background-color: var(--clr-White);
+  place-content: center;
+  background-color: var(--clr-White);
 }
 
 .followers {
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+  color: var(--clr-White);
+  padding: 0;
+  background-color: var(--clr-Purple-500);
+}
+
+/* media query */
+@media screen and (max-width: 950px) {
+  .bento-grid-container {
     grid-template-columns: 1fr 1fr;
-    place-items: center;
-    color: var(--clr-White);
-    padding: 0;
-    background-color: var(--clr-Purple-500);
+    grid-template-rows: 13rem 13rem 13rem 13rem;
+    grid-template-areas:
+      "col2 col3"
+      "col2 col3"
+      "col4 col4"
+      "col1 col1";
+  }
+
+  .column-one {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .bento-grid-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    gap: 2rem;
+    grid-template-areas:
+      "col2 "
+      "col3 "
+      "col4 "
+      "col1 ";
+  }
+
+  .bento-grid-container > *,
+  .inside-element {
+    gap: 2rem;
+  }
+
+  .column-one {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .inside-element,
+  .inside-element:nth-child(1),
+  .column-one {
+    grid-template-columns: 1fr;
+  }
+
+  .manage img {
+    position: relative;
+    max-width: 80%;
+    margin-bottom: 1rem;
+  }
+
+  .posting img {
+    position: relative;
+    bottom: -1rem;
+    left: 0;
+  }
+
+  .followers {
+    text-align: center;
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
 }
