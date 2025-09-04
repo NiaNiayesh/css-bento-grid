@@ -39,3 +39,24 @@ img{
     max-width: 80%;
     display: block;
 }
+/* helper classes */
+.grid{
+    display: grid;
+    gap: 1rem;
+}
+
+/* text styles */
+h1{
+    font-size: 2.75rem;
+    font-weight: var(--fw-500);
+}
+h2{
+    font-size: var(--fs-heading);
+    font-weight: var(--fw-500);
+    line-height: .5;
+}
+small{
+    font-size: var(--fs-body);
+}
+
+/* layout styles */
